@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Multiple jokes</title>
+  <style>
+    .shayri{
+      display: flex;
+      font-size: 50px;
+      background-color: aqua;
+      color: rgb(252, 3, 215);
+    }
+  </style>
+</head>
+<body>
+         <div class="shayri"> </div>
+         <button class="btn">click here</button>
+</body>
+<script>
+    let jokes = [
+    "Teacher: Homework kyu nahi kiya? Student: Sir, network problem thi. Teacher: Ghar me? Student: Ji sir, dimaag ka network down tha.",
+
+    "Doctor: Aapko aaram ki zarurat hai. Patient: Doctor sahab, aaram to main bachpan se kar raha hu.",
+
+    "Friend: Exam kaisa gaya? Student: Questions dekhe hi nahi gaye. Friend: Itne mushkil the? Student: Nahi, chashma ghar bhool gaya tha.",
+
+    "Son: Papa mujhe bike chahiye. Papa: Pehle padhai karo. Son: Papa aapne padhai karke kaunsi Ferrari le li?",
+
+    "Teacher: Batao duniya gol kyu hai? Student: Sir, agar chauras hoti to kone me log gir jaate.",
+
+    "Customer: Bhai chai me makkhi hai. Waiter: Sir, dil bada rakhiye, free me protein mil raha hai.",
+
+    "Boy: Main tumhare liye chaand tod launga. Girl: Pehle apna alarm tod, roz late aata hai.",
+
+    "Teacher: Sabse zyada mehnati janwar kaun sa hai? Student: Sir, WiFi. Pura ghar uske peeche bhaagta hai.",
+
+    "Friend: Tu gym kyu join nahi karta? Boy: Kyuki mera body positive attitude hai.",
+
+    "Teacher: Agar tumhare paas 10 chocolates ho aur 5 de do to kya bachega? Student: Sir, dosti khatam ho jayegi."
+];
+let con = document.querySelector(".shayri");
+let btn = document.querySelector(".btn");
+let random = Math.floor(Math.random() * jokes.length);
+let store = jokes[random];
+con.innerHTML = store;
+btn.addEventListener("click", ()=>{
+let random = Math.floor(Math.random() * jokes.length);
+let store = jokes[random];
+con.innerHTML = store;
+})
+</script>

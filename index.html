@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO List</title>
+</head>
+<style>
+    body{
+        background-color: rgb(141, 177, 245);
+    }
+    h1{
+
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+    }
+    button{
+        width: 100px;
+        margin-left: 20px;
+    }
+    .container{
+        background-color: rgb(251, 252, 252);
+        width: 500px;
+        color: black;
+        height: 550px;
+        border-radius: 10px;
+    }
+    .gr{
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+    }
+    input{
+        width: 220px;
+    }
+
+</style>
+<body>
+    <div class="parentContainer">
+    <div class="container">
+    <h1>!! TODO List !!</h1>
+    <hr>
+    <input id= "Enter" type="text" placeholder="Enter key and value you want to set ">
+     <button id="btn">Add Items</button>
+     <button id="delete">Delete item</button>
+    <ul id="store"></ul>
+    </div>
+    </div>
+    <script>
+        let arr = [ ]
+        let input = document.getElementById("Enter");
+
+        let button = document.getElementById("btn");
+
+        let dlt = document.getElementById("delete");
+
+        let addtodos = document.getElementById("store");
+        let data = localStorage.getItem("todos");
+
+if(data !== null){
+    arr = JSON.parse(data);
+
+    arr.forEach((task)=>{
+        addtodos.innerHTML += `<li>${task}</li>`;
+    });
+}
+
+        button.addEventListener("click",() =>{
+
+        let task = input.value;
+
+        arr.push(input.value);
+
+        addtodos.innerHTML += `<li>${task}</li>`;
+
+        localStorage.setItem(
+            "todos",
+            JSON.stringify(arr)
+        );
+         data = localStorage.getItem("todos");
+            arr = JSON.parse(data)
+        });
+        dlt.addEventListener("click", ()=>{
+    localStorage.removeItem("todos");
+    arr = [];
+    addtodos.innerHTML = "";
+});
+</script>
+</body>

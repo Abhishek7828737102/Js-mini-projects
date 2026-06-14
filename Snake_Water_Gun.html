@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake water gun Game</title>
+</head>
+<body>
+    <script>
+let user = prompt("Enter S, W or G").toLowerCase();
+if(user !== "s" && user !== "g" && user !== "w" ){
+    alert("please select only S, w, G");
+    
+}
+
+let random = Math.floor(Math.random() * 3);
+let computer;
+
+if(random === 0){
+    computer = "s";
+}
+else if(random === 1){
+    computer = "w";
+}
+else{
+    computer = "g";
+}
+
+alert("Computer chose: " + computer);
+
+if(user === computer){
+    alert("Game Draw");
+}
+else if(user === "s" && computer === "w"){
+    alert("User wins because Snake drinks Water");
+}
+else if(user === "w" && computer === "g"){
+    alert("User wins because Water damages Gun");
+}
+else if(user === "g" && computer === "s"){
+    alert("User wins because Gun kills Snake");
+}
+else{
+    alert("Computer wins");
+}
+</script>
+</body>

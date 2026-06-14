@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo App</title>
+</head>
+<body>
+
+    <input type="text" id="todoInput" placeholder="Enter Todo">
+    <button id="btn">Add</button>
+
+    <div id="todos"></div>
+
+<script>
+let input = document.getElementById("todoInput");
+let btn = document.getElementById("btn");
+let todos = document.getElementById("todos");
+
+btn.addEventListener("click", function(){
+
+    let task = input.value;
+
+    let p = document.createElement("p");
+
+    p.innerText = task;
+
+    todos.appendChild(p);
+
+    input.value = "";
+
+});
+
+</script>
+
+</body>
+</html>
